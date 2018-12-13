@@ -1,7 +1,6 @@
 package com.example.myapplication
 
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.TransitionDrawable
+import android.animation.ArgbEvaluator
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -9,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import com.db.chart.view.BarChartView
+import android.animation.ValueAnimator
 
 
 class ScrollingActivity : AppCompatActivity() {
@@ -28,20 +28,42 @@ class ScrollingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_scrolling)
         drawBarChart()
 
+        changeColor(0)
+
         button1 = findViewById(R.id.button1)
         button2 = findViewById(R.id.button2)
         button3 = findViewById(R.id.button3)
         button4 = findViewById(R.id.button4)
 
         button1.setOnClickListener { onClick(0)}
-        button1.setOnClickListener { onClick(1)}
-        button1.setOnClickListener { onClick(2)}
-        button1.setOnClickListener { onClick(3)}
+        button2.setOnClickListener { onClick(1)}
+        button3.setOnClickListener { onClick(2)}
+        button4.setOnClickListener { onClick(3)}
+    }
+
+    var currentColor = 0
+
+    fun changeColor(position: Int) {
+        val colorFrom = resources.getColor(R.color.blue)
+        val colorTo = resources.getColor(when (position) {
+            0 -> R.color.blue
+            1 -> R.color.movistarGreen
+            2 -> R.color.orange
+            3 -> R.color.purple
+            else -> R.color.blue
+        })
+        currentColor = colorTo
+        val colorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), colorFrom, colorTo)
+        colorAnimation.duration = 250 // milliseconds
+        colorAnimation.addUpdateListener { animator -> findViewById<View>(R.id.header).setBackgroundColor(animator.animatedValue as Int) }
+        colorAnimation.start()
     }
 
     fun onClick(position: Int) {
 //        val transition = findViewById<View>(R.id.header).background as ColorDrawable
 //        transition.
+
+        changeColor(position)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

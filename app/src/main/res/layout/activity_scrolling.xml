@@ -13,7 +13,6 @@
         android:layout_height="300dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/movistar_color_blue"
         android:maxHeight="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,19 +28,7 @@
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/app_icon"
             tools:layout_editor_absoluteY="188dp" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="72dp"
-            android:layout_marginEnd="8dp"
-            android:background="@mipmap/app_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            tools:layout_editor_absoluteY="187dp" />
     </android.support.constraint.ConstraintLayout>
 
 
@@ -50,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/custom_border"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -61,14 +47,12 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/AppTheme.TextAppearance.Sub1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Has consumido" />
 
 
             <TextView
-                style="@style/AppTheme.TextAppearance.Headline1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1h 20m 32s" />
@@ -76,11 +60,10 @@
         </LinearLayout>
 
         <View
-            android:layout_width="@dimen/space_1dp"
+            android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/divider" />
+            android:layout_marginBottom="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,14 +73,12 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/AppTheme.TextAppearance.Sub1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gastos extra" />
 
 
             <TextView
-                style="@style/AppTheme.TextAppearance.Headline1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4,30€"

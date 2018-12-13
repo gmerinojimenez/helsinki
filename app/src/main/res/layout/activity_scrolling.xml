@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Has consumido"
-                android:textColor="@color/greyText"
+                android:textColor="@color/grey2"
                 android:textSize="14dp" />
 
 
@@ -58,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1h 20m 32s"
+                android:textColor="@color/movistarCoolgrey"
                 android:textSize="24dp" />
 
         </LinearLayout>
@@ -67,7 +68,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@color/lightGrey" />
+            android:background="@color/grey3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gastos extra"
-                android:textColor="@color/greyText"
+                android:textColor="@color/grey2"
                 android:textSize="14dp" />
 
 
@@ -88,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4,30€"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@color/pink"
                 android:textSize="24dp" />
         </LinearLayout>
 

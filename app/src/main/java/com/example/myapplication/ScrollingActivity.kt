@@ -1,17 +1,14 @@
 package com.example.myapplication
 
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
-import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageButton
 import com.db.chart.view.BarChartView
-import java.util.*
-
 
 
 class ScrollingActivity : AppCompatActivity() {
@@ -43,7 +40,8 @@ class ScrollingActivity : AppCompatActivity() {
     }
 
     fun onClick(position: Int) {
-
+//        val transition = findViewById<View>(R.id.header).background as ColorDrawable
+//        transition.
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

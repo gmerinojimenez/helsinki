@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="movistarGreen">#5BC500</color>
+    <color name="movistarCoolgrey">#2A2A3C</color>
+    <color name="grey2">#757575</color>
+    <color name="grey3">#DDDDDD</color>
+    <color name="pink">#E9426D</color>
+
 </resources>

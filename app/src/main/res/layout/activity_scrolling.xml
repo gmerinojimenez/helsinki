@@ -68,8 +68,6 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
             android:background="@color/grey3" />
 
         <LinearLayout
@@ -98,11 +96,40 @@
     </LinearLayout>
 
     <com.db.chart.view.BarChartView
+        xmlns:chart="http://schemas.android.com/apk/res-auto"
         android:id="@+id/barchart"
+        android:layout_marginTop="-40dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        chart:chart_barSpacing="8dp"/>
+
+    <RelativeLayout
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="-10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="18 ene"
+            android:textColor="@color/grey2"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17 feb"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/grey2"
+            android:textSize="12dp" />
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_margin="16dp"
+        android:id="@+id/recylcerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 </LinearLayout>

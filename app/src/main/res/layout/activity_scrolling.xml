@@ -15,6 +15,7 @@
         android:orientation="vertical"
         android:background="@color/blue"
         android:gravity="center"
+        android:paddingTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -24,29 +25,36 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:text="Consumo" />
 
         <TextView
             android:id="@+id/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="Ciclo de facturación 18 ene-17 feb" />
+            android:text="Ciclo de facturación 18 ene-17 feb"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/subtitle2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
             android:text="Tu factura cierra en 5 días." />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+          >
 
 
             <ImageButton
@@ -54,28 +62,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@null"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/icn_1_blue"/>
 
             <ImageButton
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@null"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/icn_2_blue"/>
 
             <ImageButton
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@null"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/icn_1_blue" />
 
             <ImageButton
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@null"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="16dp"
+
+                android:src="@drawable/icn_2_blue" />
         </LinearLayout>
     </LinearLayout>
 

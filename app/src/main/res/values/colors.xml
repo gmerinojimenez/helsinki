@@ -5,6 +5,9 @@
     <color name="colorAccent">#D81B60</color>
 
 
+    <color name="black_opaque">#33000000</color>
+
+
     <color name="movistarGreen">#5BC500</color>
     <color name="movistarCoolgrey">#2A2A3C</color>
     <color name="grey2">#757575</color>

@@ -8,15 +8,42 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageButton
 import com.db.chart.view.BarChartView
 import java.util.*
 
+
+
 class ScrollingActivity : AppCompatActivity() {
+
+    lateinit var button1: ImageButton
+    lateinit var button2: ImageButton
+    lateinit var button3: ImageButton
+    lateinit var button4: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.statusBarColor = resources.getColor(R.color.black_opaque, null)
+
+
         setContentView(R.layout.activity_scrolling)
         drawBarChart()
+
+        button1 = findViewById(R.id.button1)
+        button2 = findViewById(R.id.button2)
+        button3 = findViewById(R.id.button3)
+        button4 = findViewById(R.id.button4)
+
+        button1.setOnClickListener { onClick(0)}
+        button1.setOnClickListener { onClick(1)}
+        button1.setOnClickListener { onClick(2)}
+        button1.setOnClickListener { onClick(3)}
+    }
+
+    fun onClick(position: Int) {
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

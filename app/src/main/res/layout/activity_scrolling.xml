@@ -57,43 +57,152 @@
             android:orientation="horizontal">
 
 
-            <ImageButton
-                android:id="@+id/button1"
+            <!--<ImageButton-->
+            <!--android:id="@+id/button1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@null"-->
+            <!--android:src="@drawable/icn_1_blue_pressed" />-->
+
+
+            <LinearLayout
+                android:id="@+id/transitions_container1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/icn_1_blue_pressed" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/button2"
+                <ImageButton
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/icn_1_blue_pressed"
+                    />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Datos"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transitions_container2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/icn_2_green_pressed" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/button3"
+                <ImageButton
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/icn_2_green_pressed" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Llamadas"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transitions_container3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:src="@drawable/icn_3_orange_pressed" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/button4"
+                <ImageButton
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/icn_3_orange_pressed" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mensajes"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transitions_container4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                android:src="@drawable/icn_4_purple_pressed" />
+                <ImageButton
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/icn_4_purple_pressed" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otros"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/button2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@null"-->
+                <!--android:src="@drawable/icn_2_green_pressed" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/button3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@null"-->
+                <!--android:src="@drawable/icn_3_orange_pressed" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/button4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@null"-->
+
+                <!--android:src="@drawable/icn_4_purple_pressed" />-->
         </LinearLayout>
     </LinearLayout>
 
@@ -161,7 +270,13 @@
 
     </LinearLayout>
 
-    <com.db.chart.view.BarChartView
+    <!--<com.db.chart.view.BarChartView-->
+    <!--android:id="@+id/barchart"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp" />-->
+
+    <com.db.chart.view.LineChartView
+        xmlns:chart="http://schemas.android.com/apk/res-auto"
         android:id="@+id/barchart"
         android:layout_width="match_parent"
         android:layout_height="200dp" />

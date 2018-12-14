@@ -277,8 +277,4 @@ class ScrollingActivity : AppCompatActivity() {
         }
         return Animation()
     }
-
-    private fun randInt(min: Int, max: Int): Int {
-        return Random().nextInt(max - min + 1) + min
-    }
 }

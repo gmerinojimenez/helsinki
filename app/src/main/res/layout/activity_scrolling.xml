@@ -212,6 +212,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/border"
+        android:padding="16dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -241,8 +243,6 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
             android:background="@color/grey3" />
 
         <LinearLayout
@@ -269,11 +269,16 @@
         </LinearLayout>
 
     </LinearLayout>
-
     <!--<com.db.chart.view.BarChartView-->
     <!--android:id="@+id/barchart"-->
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="200dp" />-->
+
+    <com.db.chart.view.LineChartView
+        xmlns:chart="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/barchart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <RelativeLayout
         android:layout_marginRight="16dp"
@@ -298,13 +303,6 @@
             android:textColor="@color/grey2"
             android:textSize="12dp" />
     </RelativeLayout>
-
-    <com.db.chart.view.LineChartView
-        xmlns:chart="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/barchart"
-        android:layout_width="match_parent"
-        android:layout_marginTop="-40dp"
-        android:layout_height="200dp" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

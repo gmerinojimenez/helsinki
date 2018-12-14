@@ -4,11 +4,11 @@ import java.util.*
 
 
 val contacts = listOf(
-        Contact("Mamá", ""),
-        Contact("Rajoy", ""),
-        Contact("Tato Loco", ""),
-        Contact("Zaryn Denzel", ""),
-        Contact("655 123 123", "")
+        Contact("Mamá", "https://randomuser.me/api/portraits/med/women/21.jpg"),
+        Contact("Rajoy", "https://randomuser.me/api/portraits/med/men/21.jpg"),
+        Contact("Tato Loco", "https://randomuser.me/api/portraits/med/men/12.jpg"),
+        Contact("Zaryn Denzel", "https://randomuser.me/api/portraits/med/men/23.jpg"),
+        Contact("655 123 123", "https://randomuser.me/api/portraits/med/women/12.jpg")
 )
 
 val callType = listOf(true, false)

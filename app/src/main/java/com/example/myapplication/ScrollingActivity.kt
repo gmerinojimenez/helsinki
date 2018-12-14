@@ -21,6 +21,7 @@ import com.db.chart.model.BarSet
 import com.db.chart.model.LineSet
 import com.db.chart.view.BarChartView
 import com.db.chart.view.LineChartView
+import com.example.myapplication.adapter.CallUsageAdapter
 import com.example.myapplication.adapter.DataUsageAdapter
 
 
@@ -34,6 +35,10 @@ class ScrollingActivity : AppCompatActivity() {
     lateinit var button4: ImageButton
 
     var currentPosition = 0
+
+    lateinit var barChart: BarChartView
+    lateinit var lineChart: LineChartView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +61,7 @@ class ScrollingActivity : AppCompatActivity() {
         button4.setOnClickListener { onClick(3) }
 
         loadChart()
-        loadUsageList()
+        loadUsageList(currentPosition)
 
     }
 
@@ -69,9 +74,9 @@ class ScrollingActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadUsageList() {
+    private fun loadUsageList(position: Int) {
         recylclerView = findViewById(R.id.recyclerview)
-        when (currentPosition) {
+        when (position) {
             0 -> loadDataUsageList()
             1 -> loadCallUsageList()
             2 -> loadSmsList()
@@ -80,15 +85,17 @@ class ScrollingActivity : AppCompatActivity() {
     }
 
     private fun loadOtherCostList() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        loadDataUsageList()
     }
 
     private fun loadSmsList() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        loadCallUsageList()
     }
 
     private fun loadCallUsageList() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val callAdapter = CallUsageAdapter(provideCallUsage(), this)
+        recylclerView.adapter = callAdapter
+        recylclerView.layoutManager = LinearLayoutManager(this)
     }
 
     private fun loadDataUsageList() {
@@ -173,6 +180,7 @@ class ScrollingActivity : AppCompatActivity() {
 //        changeTitle(position)
 
         updateChart(position)
+        loadUsageList(position)
         currentPosition = position
     }
 
@@ -225,17 +233,21 @@ class ScrollingActivity : AppCompatActivity() {
 
     private fun updateChart(position: Int) {
         when (position) {
-            0 -> drawLineChart()
+            0 -> updateLineChart(position)
             1 -> drawBarChart()
             2 -> drawBarChart()
-            else -> drawLineChart()
+            else -> updateLineChart(position)
         }
-//        updateLineChart(position)
     }
 
     private fun updateLineChart(position: Int) {
-        val chart = findViewById<LineChartView>(R.id.linechart)
-
+        if (lineChart == null) {
+            drawLineChart()
+            return
+        }
+        findViewById<View>(R.id.barchart).visibility = View.GONE
+        lineChart = findViewById<LineChartView>(R.id.linechart)
+        lineChart.visibility = View.VISIBLE
         val newValues = when (position) {
             0 -> values1
             1 -> values2
@@ -243,7 +255,7 @@ class ScrollingActivity : AppCompatActivity() {
             3 -> values4
             else -> values1
         }
-        chart.updateValues(0, newValues.toFloatArray())
+        lineChart.updateValues(0, newValues.toFloatArray())
         //        chart.updateValues(1, newValues.toFloatArray())
         //        chart.updateValues(2, newValues.toFloatArray())
         //        chart.updateValues(3, newValues.toFloatArray())
@@ -255,7 +267,7 @@ class ScrollingActivity : AppCompatActivity() {
         //        chart.updateValues(10, newValues.toFloatArray())
         //        chart.updateValues(11, newValues.toFloatArray())
 
-        chart.notifyDataUpdate()
+        lineChart.notifyDataUpdate()
     }
 
 
@@ -263,12 +275,12 @@ class ScrollingActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.usageText).text = "18GB"
         findViewById<TextView>(R.id.costUsage).text = "6,22€"
 
-        val chart = findViewById<LineChartView>(R.id.linechart)
-        chart.visibility = View.VISIBLE
+        lineChart = findViewById<LineChartView>(R.id.linechart)
+        lineChart.visibility = View.VISIBLE
         findViewById<View>(R.id.barchart).visibility = View.GONE
-        chart.setYAxis(false)
-        chart.setLabelsColor(ContextCompat.getColor(this, R.color.white))
-        chart.setAxisColor(ContextCompat.getColor(this, R.color.grey3))
+        lineChart.setYAxis(false)
+        lineChart.setLabelsColor(ContextCompat.getColor(this, R.color.white))
+        lineChart.setAxisColor(ContextCompat.getColor(this, R.color.grey3))
         val values1 = listOf(3.5f, 4.7f, 4.3f, 8f, 6.5f, 9.9f, 7f, 8.3f, 7.0f
                 , 4.5f, 2.5f, 2.5f)
 
@@ -283,15 +295,15 @@ class ScrollingActivity : AppCompatActivity() {
                 .setThickness(10F)
                 .beginAt(0)
 
-        chart.addData(dataset)
-        chart!!.setClickablePointRadius(5F)
+        lineChart.addData(dataset)
+        lineChart!!.setClickablePointRadius(5F)
 
         val animation = com.db.chart.animation.Animation(1000)
 
         animation.setInterpolator(BounceInterpolator())
                 .fromAlpha(0)
 
-        chart.show(animation)
+        lineChart.show(animation)
 //        chart.background = R.color.black_opaque
     }
 
@@ -299,17 +311,17 @@ class ScrollingActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.usageText).text = "1h 20m 32s"
         findViewById<TextView>(R.id.costUsage).text = "4,30€"
 
-        val chart = findViewById<BarChartView>(R.id.barchart)
-        chart.visibility = View.VISIBLE
+        barChart = findViewById(R.id.barchart)
+        barChart.visibility = View.VISIBLE
         findViewById<View>(R.id.linechart).visibility = View.GONE
 //        Label
-        chart.setLabelsColor(ContextCompat.getColor(this, R.color.white))
+        barChart.setLabelsColor(ContextCompat.getColor(this, R.color.white))
 //      Axis
-        chart.setXAxis(false)
-        chart.setYAxis(false)
-        chart.setAxisBorderValues(0f, 30f, 1f)
+        barChart.setXAxis(false)
+        barChart.setYAxis(false)
+        barChart.setAxisBorderValues(0f, 30f, 1f)
 
-        chart.setRoundCorners(5f)
+        barChart.setRoundCorners(5f)
 
         val barSet = BarSet()
         for (i in 0..22) {
@@ -322,9 +334,9 @@ class ScrollingActivity : AppCompatActivity() {
             bar.color = ContextCompat.getColor(this, R.color.movistarGreen)
             barSet.addBar(bar)
         }
-        chart.addData(barSet)
+        barChart.addData(barSet)
 
-        chart.show(getAnimation(30))
+        barChart.show(getAnimation(30))
     }
 
     private fun getAnimation(numberOfBars: Int): Animation {

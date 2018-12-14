@@ -10,11 +10,11 @@
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:maxHeight="300dp"
-        android:orientation="vertical"
-        android:background="@color/blue"
+        android:layout_height="250dp"
+        android:background="@drawable/ic_launcher_background"
         android:gravity="center"
+        android:maxHeight="250dp"
+        android:orientation="vertical"
         android:paddingTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,11 +25,11 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_weight="1"
-            android:textStyle="bold"
+            android:text="Consumo"
             android:textColor="@android:color/white"
-            android:text="Consumo" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/subtitle"
@@ -43,57 +43,166 @@
         <TextView
             android:id="@+id/subtitle2"
             android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
             android:gravity="center_horizontal"
-            android:textSize="14sp"
+            android:text="Tu factura cierra en 5 días."
             android:textColor="@android:color/white"
-            android:text="Tu factura cierra en 5 días." />
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-          >
+            android:layout_weight="0.8"
+            android:orientation="horizontal">
 
 
-            <ImageButton
-                android:id="@+id/button1"
+            <!--<ImageButton-->
+            <!--android:id="@+id/button1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@null"-->
+            <!--android:src="@drawable/icn_1_blue_pressed" />-->
+
+
+            <LinearLayout
+                android:id="@+id/transitions_container1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
                 android:layout_marginLeft="16dp"
-                android:src="@drawable/icn_1_blue"/>
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/button2"
+                <ImageButton
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/icn_1_blue_pressed"
+                    />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Datos"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transitions_container2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/icn_2_blue"/>
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/button3"
+                <ImageButton
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/icn_2_green_pressed" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Llamadas"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transitions_container3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/icn_1_blue" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/button4"
+                <ImageButton
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/icn_3_orange_pressed" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mensajes"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transitions_container4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                android:src="@drawable/icn_2_blue" />
+                <ImageButton
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/icn_4_purple_pressed" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otros"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/button2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@null"-->
+                <!--android:src="@drawable/icn_2_green_pressed" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/button3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@null"-->
+                <!--android:src="@drawable/icn_3_orange_pressed" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/button4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@null"-->
+
+                <!--android:src="@drawable/icn_4_purple_pressed" />-->
         </LinearLayout>
     </LinearLayout>
 
@@ -103,8 +212,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/border"
-        android:padding="16dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -134,6 +241,8 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@color/grey3" />
 
         <LinearLayout
@@ -161,13 +270,10 @@
 
     </LinearLayout>
 
-    <com.db.chart.view.BarChartView
-        xmlns:chart="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/barchart"
-        android:layout_marginTop="-40dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        chart:chart_barSpacing="8dp"/>
+    <!--<com.db.chart.view.BarChartView-->
+    <!--android:id="@+id/barchart"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp" />-->
 
     <RelativeLayout
         android:layout_marginRight="16dp"
@@ -193,9 +299,14 @@
             android:textSize="12dp" />
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_margin="16dp"
-        android:id="@+id/recylcerView"
+    <com.db.chart.view.LineChartView
+        xmlns:chart="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/barchart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_marginTop="-40dp"
+        android:layout_height="200dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

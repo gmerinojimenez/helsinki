@@ -5,6 +5,8 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.ImageButton
 import com.db.chart.animation.Animation
 import com.db.chart.model.Bar
 import com.db.chart.model.BarSet
@@ -14,10 +16,35 @@ import java.util.*
 
 class ScrollingActivity : AppCompatActivity() {
 
+    lateinit var button1: ImageButton
+    lateinit var button2: ImageButton
+    lateinit var button3: ImageButton
+    lateinit var button4: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.statusBarColor = resources.getColor(R.color.black_opaque, null)
+
+
         setContentView(R.layout.activity_scrolling)
         drawBarChart()
+
+        button1 = findViewById(R.id.button1)
+        button2 = findViewById(R.id.button2)
+        button3 = findViewById(R.id.button3)
+        button4 = findViewById(R.id.button4)
+
+        button1.setOnClickListener { onClick(0) }
+        button1.setOnClickListener { onClick(1) }
+        button1.setOnClickListener { onClick(2) }
+        button1.setOnClickListener { onClick(3) }
+    }
+
+    fun onClick(position: Int) {
+//        val transition = findViewById<View>(R.id.header).background as ColorDrawable
+//        transition.
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -52,12 +79,12 @@ class ScrollingActivity : AppCompatActivity() {
         val barSet = BarSet()
         for (i in 0..22) {
             val bar = Bar("", randInt(5, 20).toFloat())
-            bar.color = ContextCompat.getColor(this, R.color.movistarGreen)
+            bar.color = ContextCompat.getColor(this, R.color.blue)
             barSet.addBar(bar)
         }
         for (i in 0..8) {
             val bar = Bar("", 0f)
-            bar.color = ContextCompat.getColor(this, R.color.movistarGreen)
+            bar.color = ContextCompat.getColor(this, R.color.blue)
             barSet.addBar(bar)
         }
         chart.addData(barSet)

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="black_opaque">#33000000</color>
 
     <color name="movistarGreen">#5BC500</color>
     <color name="movistarCoolgrey">#2A2A3C</color>
@@ -12,6 +13,6 @@
     <color name="pink">#E9426D</color>
 
     <color name="white">#FFFFFF</color>
-
+    <color name="blue">#00A9E0</color>
 
 </resources>

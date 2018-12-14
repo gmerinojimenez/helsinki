@@ -4,26 +4,26 @@ import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.transition.TransitionManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.animation.BounceInterpolator
 import android.widget.ImageButton
 import android.widget.TextView
+import com.db.chart.animation.Animation
 import com.db.chart.model.LineSet
 import com.db.chart.view.LineChartView
-import android.graphics.Color.parseColor
-import android.support.v4.content.ContextCompat
-import android.view.animation.BounceInterpolator
-import com.db.chart.animation.Animation
-import com.db.chart.model.Bar
-import com.db.chart.model.BarSet
-import com.db.chart.view.BarChartView
-import java.util.*
+import com.example.myapplication.adapter.DataUsageAdapter
 
 
 class ScrollingActivity : AppCompatActivity() {
+
+    lateinit var recylclerView: RecyclerView
 
     lateinit var button1: ImageButton
     lateinit var button2: ImageButton
@@ -54,6 +54,36 @@ class ScrollingActivity : AppCompatActivity() {
         button3.setOnClickListener { onClick(2) }
         button4.setOnClickListener { onClick(3) }
 
+        loadUsageList()
+
+    }
+
+    private fun loadUsageList() {
+        recylclerView = findViewById(R.id.recyclerview)
+        when (currentPosition) {
+            0 -> loadDataUsageList()
+            1 -> loadCallUsageList()
+            2 -> loadSmsList()
+            else -> loadOtherCostList()
+        }
+    }
+
+    private fun loadOtherCostList() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun loadSmsList() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun loadCallUsageList() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun loadDataUsageList() {
+        val dataUsageAdapter = DataUsageAdapter(provideDataUsage())
+        recylclerView.adapter = dataUsageAdapter
+        recylclerView.layoutManager = LinearLayoutManager(this)
     }
 
     var currentColor = 0
@@ -211,6 +241,9 @@ class ScrollingActivity : AppCompatActivity() {
     private fun drawBarChart() {
         val chart = findViewById<LineChartView>(R.id.barchart)
 
+        chart.setYAxis(false)
+        chart.setLabelsColor(ContextCompat.getColor(this, R.color.white))
+        chart.setAxisColor(ContextCompat.getColor(this, R.color.grey2))
         val values1 = listOf(3.5f, 4.7f, 4.3f, 8f, 6.5f, 9.9f, 7f, 8.3f, 7.0f
                 , 4.5f, 2.5f, 2.5f)
 
@@ -227,16 +260,11 @@ class ScrollingActivity : AppCompatActivity() {
 
         chart.addData(dataset)
         chart!!.setClickablePointRadius(5F)
-        chart.setYAxis(false)
 
         val animation = com.db.chart.animation.Animation(1000)
 
         animation.setInterpolator(BounceInterpolator())
                 .fromAlpha(0)
-
-//        new Animation().setInterpolator(new BounceInterpolator())
-//                .fromAlpha(0)
-//                .withEndAction(chartAction))
 
         chart.show(animation)
 //        chart.background = R.color.black_opaque
